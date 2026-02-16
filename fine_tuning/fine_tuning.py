@@ -31,6 +31,7 @@ dataset_size = len(image_dataset)  # データの個数
 class_names = image_dataset.classes  # trainディレクトリ下にants, beesフォルダがあるから、それが名前に
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+print(f"{dataset_size=}")
 
 def train_model(model, criterion, optimizer, scheduler, num_epochs=100):
     with tqdm(range(num_epochs)) as progressbar:
